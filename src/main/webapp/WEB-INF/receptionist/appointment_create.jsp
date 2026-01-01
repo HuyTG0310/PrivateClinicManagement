@@ -1,22 +1,5 @@
-<%-- 
-    Document   : appointment_create
-    Created on : Jan 1, 2026, 10:51:40 AM
-    Author     : huytr
---%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    </head>
-    <body>
-
 
 <div class="container my-4">
     <div class="row justify-content-center">
@@ -33,7 +16,7 @@
                 </p>
             </div>
 
-            <form method="POST">
+            <form method="post">
 
                 <!-- ================= SEARCH PATIENT ================= -->
                 <div class="card shadow-sm border-0 mb-4">
@@ -60,15 +43,14 @@
                                            value="${param.searchPhone}" />
                                 </div>
                             </div>
-                               
-                                
-                             <!--formonvalidate là để bỏ qua validation, vì ở đây cần tìm theo sđt nên tạm thời bỏ qua các fields khác-->
+
+                            <!-- bỏ qua validate để search -->
                             <div class="col-md-3">
                                 <button type="submit"
                                         name="action"
                                         value="searchPatient"
                                         class="btn btn-primary w-100"
-                                        formnovalidate> 
+                                        formnovalidate>
                                     <i class="fa-solid fa-magnifying-glass me-1"></i>
                                     Tìm kiếm
                                 </button>
@@ -163,17 +145,6 @@
                                 </select>
                             </div>
 
-                            <!-- Date -->
-<!--                            <div class="col-md-6">
-                                <label class="form-label fw-semibold">
-                                    Ngày khám <span class="text-danger">*</span>
-                                </label>
-                                <input type="date"
-                                       name="appointmentDate"
-                                       class="form-control"
-                                       required />
-                            </div>-->
-
                             <!-- Note -->
                             <div class="col-12">
                                 <label class="form-label">Ghi chú</label>
@@ -208,6 +179,3 @@
         </div>
     </div>
 </div>
-
-    </body>
-</html>

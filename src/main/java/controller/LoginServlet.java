@@ -39,7 +39,6 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("error", "Sai tài khoản hoặc mật khẩu");
             //gửi lại username và password cũ
             request.setAttribute("username", username);
-            request.setAttribute("password", password);
             request.getRequestDispatcher("Login.jsp").forward(request, response);
         } //nếu thành công thì tạo session, đưa về servlet dashboard
         else {

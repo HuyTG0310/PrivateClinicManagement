@@ -3,6 +3,7 @@ D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\UserDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Invoice.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\InvoiceItem.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\LogoutServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Prescription.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\util\DBContext.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\ClinicRoom.java
@@ -21,7 +22,7 @@ D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\PrescriptionDetail.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\User.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\DashboardServlet.java
-D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\receptionist\ReceptionistDashboardServlet.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\receptionist\DashboardServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\LoginServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\AppointmentDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\ClinicRoomDAO.java

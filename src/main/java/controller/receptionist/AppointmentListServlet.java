@@ -27,9 +27,11 @@ public class AppointmentListServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        List<AppointmentDTO> list = dao.GetTodayAppointments();
-        request.setAttribute("appointments", list);
-        request.getRequestDispatcher("/WEB-INF/receptionist/appointment_list.jsp").forward(request, response);
+        request.setAttribute("pageTitle", "Danh sách lịch khám");
+        request.setAttribute("activePage", "appointments");
+        request.setAttribute("contentPage", "/WEB-INF/receptionist/appointment_list.jsp");
+        request.setAttribute("appointments", dao.GetTodayAppointments());
+        request.getRequestDispatcher("/WEB-INF/layout/receptionist_layout.jsp").forward(request, response);
     }
 
     @Override

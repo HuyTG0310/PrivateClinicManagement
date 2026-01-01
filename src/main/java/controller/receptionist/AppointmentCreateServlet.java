@@ -41,10 +41,12 @@ public class AppointmentCreateServlet extends HttpServlet {
         }
 
         //Load ds phòng khám
-        List<ClinicRoom> rooms = clinicDao.GetAll();
-        request.setAttribute("rooms", rooms);
+        request.setAttribute("rooms", clinicDao.GetAll());
+        request.setAttribute("pageTitle", "Tạo lịch khám");
+        request.setAttribute("activePage", "createAppointment");
+        request.setAttribute("contentPage", "/WEB-INF/receptionist/appointment_create.jsp");
+        request.getRequestDispatcher("/WEB-INF/layout/receptionist_layout.jsp").forward(request, response);
 
-        request.getRequestDispatcher("/WEB-INF/receptionist/appointment_create.jsp").forward(request, response);
     }
 
     @Override
@@ -60,10 +62,13 @@ public class AppointmentCreateServlet extends HttpServlet {
                 request.setAttribute("searchError", "Không tìm thấy bệnh nhân");
             } else {
                 request.setAttribute("patient", patient);
-                request.setAttribute("rooms", clinicDao.GetAll());
             }
 
-            request.getRequestDispatcher("/WEB-INF/receptionist/appointment_create.jsp").forward(request, response);
+            request.setAttribute("rooms", clinicDao.GetAll());
+            request.setAttribute("pageTitle", "Tạo lịch khám");
+            request.setAttribute("activePage", "createAppointment");
+            request.setAttribute("contentPage", "/WEB-INF/receptionist/appointment_create.jsp");
+            request.getRequestDispatcher("/WEB-INF/layout/receptionist_layout.jsp").forward(request, response);
             return;
         }
 

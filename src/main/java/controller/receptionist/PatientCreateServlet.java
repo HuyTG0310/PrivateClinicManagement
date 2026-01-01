@@ -25,7 +25,10 @@ public class PatientCreateServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/receptionist/patient_create.jsp").forward(request, response);
+        request.setAttribute("contentPage", "/WEB-INF/receptionist/patient_create.jsp");
+        request.setAttribute("pageTitle", "Tạo bệnh nhân");
+        request.setAttribute("activePage", "createPatient");
+        request.getRequestDispatcher("/WEB-INF/layout/receptionist_layout.jsp").forward(request, response);
     }
 
     @Override
@@ -40,7 +43,10 @@ public class PatientCreateServlet extends HttpServlet {
         //vì name và phone đã required nên sẽ ko empty, chỉ cần check format phone
         if (!phone.matches("(^[0]\\d{9})$")) {
             request.setAttribute("error", "Số điện thoại phải đúng định dạng");
-            request.getRequestDispatcher("/WEB-INF/receptionist/patient_create.jsp").forward(request, response);
+            request.setAttribute("contentPage", "/WEB-INF/receptionist/patient_create.jsp");
+            request.setAttribute("pageTitle", "Tạo bệnh nhân");
+            request.setAttribute("activePage", "createPatient");
+            request.getRequestDispatcher("/WEB-INF/layout/receptionist_layout.jsp").forward(request, response);
             return;
         }
 

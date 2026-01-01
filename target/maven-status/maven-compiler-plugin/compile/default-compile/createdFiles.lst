@@ -1,7 +1,6 @@
 controller\DashboardServlet.class
 model\PrescriptionDetail.class
 model\Medicine.class
-controller\receptionist\ReceptionistDashboardServlet.class
 model\Patient.class
 model\Role.class
 dao\UserDAO.class
@@ -22,7 +21,9 @@ dao\AppointmentDAO.class
 model\RoleConstant.class
 model\PrescriptionDetailView.class
 util\DBContext.class
+controller\receptionist\DashboardServlet.class
 dao\ClinicRoomDAO.class
 controller\receptionist\PatientCreateServlet.class
+controller\LogoutServlet.class
 dao\PatientDAO.class
 model\ClinicRoom.class
