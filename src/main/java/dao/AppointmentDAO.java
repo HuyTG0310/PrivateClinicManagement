@@ -98,12 +98,135 @@ public class AppointmentDAO extends DBContext {
         return list;
     }
 
+    public List<AppointmentDTO> GetWaitingAppointmentsForDoctor(int doctorId) {
+        List<AppointmentDTO> list = new ArrayList<>();
+
+        String sql = "SELECT a.appointment_id, a.queue_number, a.checkin_time, \n"
+                + "p.name  AS patient_name, p.phone AS patient_phone\n"
+                + "FROM Appointment a JOIN Patient p ON a.patient_id = p.patient_id\n"
+                + "JOIN ClinicRoom c ON a.clinic_room_id = c.clinic_room_id\n"
+                + "JOIN Doctor d ON d.specialty = c.clinic_room_name\n"
+                + "WHERE d.doctor_id = ? AND a.status = 'WAITING' AND CAST(a.checkin_time AS DATE) = CAST(GETDATE() AS DATE)\n"
+                + "ORDER BY a.queue_number";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, doctorId);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                AppointmentDTO av = new AppointmentDTO();
+                av.setAppointmentId(rs.getInt("appointment_id"));
+                av.setQueueNumber(rs.getInt("queue_number"));
+                av.setCheckinTime(rs.getTimestamp("checkin_time"));
+                av.setPatientName(rs.getString("patient_name"));
+                av.setPatientPhone(rs.getString("patient_phone"));
+                list.add(av);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public List<AppointmentDTO> GetInProgressAppointmentsForDoctor(int doctorId) {
+        List<AppointmentDTO> list = new ArrayList<>();
+
+        String sql = "SELECT a.appointment_id, a.queue_number, a.checkin_time, \n"
+                + "p.name  AS patient_name, p.phone AS patient_phone\n"
+                + "FROM Appointment a JOIN Patient p ON a.patient_id = p.patient_id\n"
+                + "JOIN ClinicRoom c ON a.clinic_room_id = c.clinic_room_id\n"
+                + "JOIN Doctor d ON d.specialty = c.clinic_room_name\n"
+                + "WHERE d.doctor_id = ? AND a.status = 'IN_PROGRESS' AND CAST(a.checkin_time AS DATE) = CAST(GETDATE() AS DATE)\n"
+                + "ORDER BY a.queue_number";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, doctorId);
+
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                AppointmentDTO av = new AppointmentDTO();
+                av.setAppointmentId(rs.getInt("appointment_id"));
+                av.setQueueNumber(rs.getInt("queue_number"));
+                av.setCheckinTime(rs.getTimestamp("checkin_time"));
+                av.setPatientName(rs.getString("patient_name"));
+                av.setPatientPhone(rs.getString("patient_phone"));
+                list.add(av);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return list;
+    }
+
+    public int GetQueueNumberByAppointmentId(String id) {
+        String sql = "SELECT queue_number FROM Appointment WHERE appointment_id = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
+    public void UpdateStatus(String status, String appointmentId) {
+        String sql = "UPDATE Appointment SET Status = ? WHERE appointment_id = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, status);
+            ps.setString(2, appointmentId);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public int GetClinicRoomIdByAppointmentId(String id) {
+        String sql = "SELECT clinic_room_id FROM Appointment WHERE appointment_id = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return rs.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         AppointmentDAO dao = new AppointmentDAO();
 //        dao.CreateAppointment(1, 2, 3);
-        
-        for (AppointmentDTO a : dao.GetTodayAppointments()) {
-            System.out.println(a.toString());
-        }
+
+//        for (AppointmentDTO a : dao.GetWaitingAppointmentsForDoctor(1)) {
+//            System.out.println(a.toString());
+//        }
+        System.out.println(dao.GetClinicRoomIdByAppointmentId("15"));
+//        dao.UpdateStatus("DONE", "1");
+
     }
+
 }

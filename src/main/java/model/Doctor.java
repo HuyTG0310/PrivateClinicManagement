@@ -10,7 +10,7 @@ public class Doctor implements Serializable {
 
     private static final long serialVersionUID = 1L;
     
-    private Integer doctorId;
+    private int doctorId;
     
     private String name;
    
@@ -23,20 +23,20 @@ public class Doctor implements Serializable {
     public Doctor() {
     }
 
-    public Doctor(Integer doctorId) {
+    public Doctor(int doctorId) {
         this.doctorId = doctorId;
     }
 
-    public Doctor(Integer doctorId, String name) {
+    public Doctor(int doctorId, String name) {
         this.doctorId = doctorId;
         this.name = name;
     }
 
-    public Integer getDoctorId() {
+    public int getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(Integer doctorId) {
+    public void setDoctorId(int doctorId) {
         this.doctorId = doctorId;
     }
 

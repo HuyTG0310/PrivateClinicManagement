@@ -73,6 +73,7 @@
                                 </span>
                                 <input type="date"
                                        name="dob"
+                                       required
                                        class="form-control" />
                             </div>
                         </div>

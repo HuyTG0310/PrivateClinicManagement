@@ -1,35 +1,38 @@
-
 package model;
 
-import java.io.Serializable;
 import java.util.Date;
 
+public class TestResult {
 
-public class TestResult implements Serializable {
-
-    private static final long serialVersionUID = 1L;
-    
-    private Integer testResultId;
-    
-    private String resultValue;
-    
-    private Date resultDate;
-    
+    private int testResultId;
     private int testRequestId;
+    private String resultValue;
+    private Date resultDate;
 
     public TestResult() {
     }
 
-    public TestResult(Integer testResultId) {
+    public TestResult(int testResultId, int testRequestId, String resultValue, Date resultDate) {
         this.testResultId = testResultId;
+        this.testRequestId = testRequestId;
+        this.resultValue = resultValue;
+        this.resultDate = resultDate;
     }
 
-    public Integer getTestResultId() {
+    public int getTestResultId() {
         return testResultId;
     }
 
-    public void setTestResultId(Integer testResultId) {
+    public void setTestResultId(int testResultId) {
         this.testResultId = testResultId;
+    }
+
+    public int getTestRequestId() {
+        return testRequestId;
+    }
+
+    public void setTestRequestId(int testRequestId) {
+        this.testRequestId = testRequestId;
     }
 
     public String getResultValue() {
@@ -47,19 +50,4 @@ public class TestResult implements Serializable {
     public void setResultDate(Date resultDate) {
         this.resultDate = resultDate;
     }
-
-    public int getTestRequestId() {
-        return testRequestId;
-    }
-
-    public void setTestRequestId(int testRequestId) {
-        this.testRequestId = testRequestId;
-    }
-
-
-    @Override
-    public String toString() {
-        return "model.TestResult[ testResultId=" + testResultId + " ]";
-    }
-
 }

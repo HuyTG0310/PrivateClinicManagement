@@ -16,10 +16,10 @@ public class AppointmentDTO {
     private int appointmentId;
     private int queueNumber;
     private Timestamp checkinTime;
-
     private String patientName;
     private String patientPhone;
     private String clinicRoomName;
+    private String status;
 
     public int getAppointmentId() {
         return appointmentId;
@@ -67,6 +67,14 @@ public class AppointmentDTO {
 
     public void setClinicRoomName(String clinicRoomName) {
         this.clinicRoomName = clinicRoomName;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override

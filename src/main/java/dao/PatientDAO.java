@@ -4,6 +4,7 @@
  */
 package dao;
 
+import dto.PatientDTO;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,9 +72,7 @@ public class PatientDAO extends DBContext {
         }
         return null;
     }
-    
-    
-    
+
     public Patient GetById(int id) {
 
         String sql = "SELECT * FROM Patient WHERE patient_id = ?";
@@ -102,7 +101,35 @@ public class PatientDAO extends DBContext {
             e.printStackTrace();
         }
         return null;
-    } 
+    }
+
+    public PatientDTO GetPatientByAppointmentId(String id) {
+        String sql = "SELECT Patient.name, Patient.gender, Patient.dob\n"
+                + "FROM Appointment INNER JOIN\n"
+                + "Patient ON Appointment.patient_id = Patient.patient_id\n"
+                + "WHERE appointment_id = ?";
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, id);
+
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                PatientDTO p = new PatientDTO();
+                p.setName(rs.getString("name"));
+                p.setGender(rs.getString("gender"));
+                p.setDob(rs.getDate("dob"));
+                return p;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+        
+        
+    }
 
     public static void main(String[] args) {
         PatientDAO dao = new PatientDAO();
@@ -117,8 +144,8 @@ public class PatientDAO extends DBContext {
 //        int id = dao.Create(p);
 //        System.out.println(id);
 
-        System.out.println(dao.GetById(1).toString());
-
+        System.out.println(dao.GetPatientByAppointmentId("10").toString());
+        
     }
 
 }

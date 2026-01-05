@@ -5,6 +5,7 @@
 package controller.receptionist;
 
 import dao.AppointmentDAO;
+import dao.DoctorDAO;
 import dto.AppointmentDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -23,7 +24,8 @@ import java.util.List;
 public class AppointmentListServlet extends HttpServlet {
 
     AppointmentDAO dao = new AppointmentDAO();
-
+    DoctorDAO doctorDao = new DoctorDAO();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
