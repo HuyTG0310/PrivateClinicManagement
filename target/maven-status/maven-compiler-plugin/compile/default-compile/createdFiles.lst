@@ -12,8 +12,10 @@ model\Appointment.class
 model\TestResult.class
 dao\MedicineDAO.class
 controller\receptionist\AppointmentCreateServlet.class
+controller\lab\LabSaveResultServlet.class
 model\User.class
 dto\ExamDetailDTO.class
+dao\TestResultDAO.class
 controller\doctor\SaveDiagnosisServlet.class
 controller\doctor\SavePrescriptionServlet.class
 dto\AppointmentDTO.class
@@ -33,6 +35,7 @@ dao\ExamHistoryDAO.class
 model\ClinicRoomTestType.class
 dto\ExamHistoryDTO.class
 dao\TestRequestDAO.class
+dto\LabTestDTO.class
 filter\AuthFilter.class
 controller\doctor\DoctorExaminingServlet.class
 model\Role.class
@@ -42,6 +45,7 @@ model\TestRequest.class
 controller\LoginServlet.class
 controller\receptionist\AppointmentListServlet.class
 model\Prescription.class
+controller\lab\LabDashboardServlet.class
 dao\TestTypeDAO.class
 dao\PrescriptionDAO.class
 model\Invoice.class

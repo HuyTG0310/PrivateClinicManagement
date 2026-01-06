@@ -41,7 +41,7 @@ public class DashboardServlet extends HttpServlet {
                 response.sendRedirect("receptionist/dashboard");
                 break;
             case RoleConstant.LAB_TECHNICIAN:
-                response.sendRedirect("labTechnician/dashboard");
+                response.sendRedirect("lab/dashboard");
                 break;
             case RoleConstant.PHARMACIST:
                 response.sendRedirect("pharmacist/dashboard");

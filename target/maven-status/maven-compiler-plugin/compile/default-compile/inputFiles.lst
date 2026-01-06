@@ -12,6 +12,7 @@ D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dto\A
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\TestRequest.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\receptionist\AppointmentListServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dto\ExamDetailDTO.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dto\LabTestDTO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\TestViewDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\filter\AuthFilter.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Role.java
@@ -38,6 +39,7 @@ D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\util\
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\ExamHistoryDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\doctor\DoctorExamServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\doctor\RequestTestServlet.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\lab\LabSaveResultServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\RoleConstant.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\TestResult.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\PrescriptionDetailView.java
@@ -46,7 +48,9 @@ D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\contr
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Examination.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Doctor.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\model\Patient.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\TestResultDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dto\ExamHistoryDTO.java
+D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\lab\LabDashboardServlet.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dao\PrescriptionDAO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\dto\TestDTO.java
 D:\2025-2026\SP 26\SWP391\Assignment\PrivateClinicManagement\src\main\java\controller\doctor\SavePrescriptionServlet.java

@@ -19,10 +19,10 @@
                 <tr>
                     <th style="width:130px;">Ngày khám</th>
                     <th style="width:80px;" class="text-center">STT</th>
-                    <th>Bệnh nhân</th>
+                    <th style="width:400px;">Bệnh nhân</th>
                     <th style="width:140px;">SĐT</th>
                     <th>Chẩn đoán</th>
-                    <th style="width:100px;" class="text-center">Hành động</th>
+                    <th style="width:140px;" class="text-center">Hành động</th>
                 </tr>
             </thead>
 

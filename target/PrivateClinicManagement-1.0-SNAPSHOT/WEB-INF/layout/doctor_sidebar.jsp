@@ -14,24 +14,16 @@
 
     <ul class="nav nav-pills flex-column gap-2 sidebar-menu">
 
-        <!-- Dashboard -->
+        <!-- Waiting -->
         <li class="nav-item">
             <a class="nav-link ${activePage == 'doctorDashboard' ? 'active' : ''}"
                href="${pageContext.request.contextPath}/doctor/dashboard">
                 <i class="fa-solid fa-gauge me-2"></i>
-                Dashboard
-            </a>
-        </li>
-
-        <!-- Waiting Patients -->
-        <li class="nav-item">
-            <a class="nav-link ${activePage == 'waitingPatients' ? 'active' : ''}"
-               href="${pageContext.request.contextPath}/doctor/patients/waiting">
-                <i class="fa-solid fa-stethoscope me-2"></i>
                 Bệnh nhân chờ khám
             </a>
         </li>
 
+        <!--examining-->
         <li class="nav-item">
             <a class="nav-link ${activePage == 'examiningPatients' ? 'active' : ''}"
                href="${pageContext.request.contextPath}/doctor/examining">

@@ -11,54 +11,16 @@
 <div class="d-flex justify-content-between align-items-center mb-4">
     <h4 class="fw-bold mb-0">
         <i class="fa-solid fa-gauge me-2 text-primary"></i>
-        Doctor Dashboard
+        Danh sách bệnh nhân
     </h4>
     <span class="text-muted">
         Xin chào, <b>${sessionScope.user.fullName}</b>
     </span>
 </div>
 
-<!-- ================= STATS ================= -->
-<div class="row g-4 mb-4">
-
-    <div class="col-md-4">
-        <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
-                <i class="fa-solid fa-users fa-2x text-primary mb-2"></i>
-                <h6 class="fw-bold">Bệnh nhân hôm nay</h6>
-                <h3 class="mb-0">${totalToday}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
-                <i class="fa-solid fa-clock fa-2x text-warning mb-2"></i>
-                <h6 class="fw-bold">Đang chờ khám</h6>
-                <h3 class="mb-0">${waitingCount}</h3>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-md-4">
-        <div class="card shadow-sm border-0">
-            <div class="card-body text-center">
-                <i class="fa-solid fa-check fa-2x text-success mb-2"></i>
-                <h6 class="fw-bold">Đã khám xong</h6>
-                <h3 class="mb-0">${doneCount}</h3>
-            </div>
-        </div>
-    </div>
-
-</div>
 
 <!-- ================= WAITING PATIENTS ================= -->
 <div class="card shadow-sm border-0">
-    <div class="card-header bg-white fw-semibold">
-        <i class="fa-solid fa-stethoscope me-2 text-success"></i>
-        Bệnh nhân đang chờ khám
-    </div>
 
     <div class="card-body p-0">
         <table class="table table-hover align-middle mb-0">
